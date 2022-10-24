@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+html xmlns:th="http://www.thymeleaf.org">    
+    <head>        
+        <title>Modificar Pais</title>        
+        <meta charset="UTF-8">        
+    </head>    
+    <body>        
+        <header th:replace="layout/plantilla :: header"/>        
+        <h2>Datos del Pais</h2>        
+        <br>        
+        <a th:href="@{/}">Regresar</a>        
+        <br>        
+        <br>        
+        <form th:action="@{/guardarPais}"            
+              method="post"            
+              th:object="${pais}">   
+            <input type="hidden" name="idPais" th:field="*{idPais}"/>
+            <label for="NombreEstado">NombreEstado: </label>            
+            <input type="text" name="NombreEstado" th:field="*{NombreEstado}" />            
+            <br>            
+            <label for="capital">Capital: </label>            
+            <input type="text" name="capital" th:field="*{capital}" />            
+            <br>            
+            <label for="población">Población: </label>            
+            <input type="num" name="población" th:field="*{población}" />            
+            <br>     
+            <label for="costas">Costas: </label>            
+            <input type="num" name="costas" th:field="*{costas}" />            
+            <br>            
+            <input type="submit" name="Guardar" value="Guardar" />        
+        </form> 
+        <footer th:replace="layout/plantilla :: footer" />
+    </body>
+    </html>
+

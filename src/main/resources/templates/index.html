@@ -7,12 +7,12 @@
       
     </head>
     <body>
-        <h1>Países</h1>
+        <h1>Listado de Países</h1>
         <header th:replace="layout/plantilla :: header"/>
 <br/>
-<a th:href="@{/nuevoCliente}">Países del planeta</a>
+<a th:href="@{/nuevoPais}">Países del planeta</a>
 <br/>  
-<div th:if"${clientes != null and !clientes.empty}">
+<div th:if="${paises != null and !paises.empty}">
         <table border="1">
             <thead>
                 <tr>
@@ -20,6 +20,7 @@
                     <th>Capital</th>
                     <th>Población</th>
                     <th>Costas</th>
+                    <th>Modificar</th>
                      
                 </tr>
             </thead>
@@ -29,7 +30,7 @@
                     <td th:text="${item.capital}"></td>
                     <td th:text="${item.población}"></td>
                     <td th:text="${item.costas}"></td>
-                    
+                    <td><a th:href= "@{/modificarPais/} + ${item.idPais}">Modificar</a></td>
                     
                 </tr>
             </tbody>

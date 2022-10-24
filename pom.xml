@@ -51,6 +51,18 @@
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-data-jpa</artifactId>
                 </dependency>
+	 <dependency>
+	  <groupId>com.tienda_l</groupId>
+	  <artifactId>tienda_l</artifactId>
+	  <version>0.0.1-SNAPSHOT</version>
+	  <type>jar</type>
+	 </dependency>
+	 <dependency>
+	  <groupId>com.practica1</groupId>
+	  <artifactId>practica1</artifactId>
+	  <version>1</version>
+	  <type>jar</type>
+	 </dependency>
 	</dependencies>
 
 	<build>
