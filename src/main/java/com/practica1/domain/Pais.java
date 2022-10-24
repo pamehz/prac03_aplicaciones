@@ -1,24 +1,34 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/springframework/Controller.java to edit this template
- */
+
 package com.practica1.domain;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import javax.persistence.*;
 
-/**
- *
- * @author zujeily
- */
-@Controller
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name="estado")
 public class Pais {
     
-    @RequestMapping("/url")
-    public String page(Model model) {
-        model.addAttribute("attribute", "value");
-        return "view.name";
+  private static final long serialVersionUID =1L;
+ 
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long  idPais; 
+  String NombreEstado;  
+  String capital;  
+  int población;  
+  int costas;  
+
+    public Pais() {
     }
-    
+
+    public Pais(String NombreEstado, String capital, int población, int costas) {
+        this.NombreEstado = NombreEstado;
+        this.capital = capital;
+        this.población = población;
+        this.costas = costas;
+    }
+  
+  
 }
